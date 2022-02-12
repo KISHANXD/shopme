@@ -1,5 +1,6 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { connect } from 'react-redux';
+import { addToCart } from '../../redux/actions';
 import './styles.css';
 
 class CreateItem extends React.Component {
@@ -12,11 +13,21 @@ class CreateItem extends React.Component {
     }
 
     handleAddToCart = () => {
+        const { item } = this.props;
         const { isAdded } = this.state;
-        this.setState({
-            btnText: isAdded ? 'Added to Cart! Want to remove?' : 'Add to Cart',
-            isAdded: !isAdded
-        });
+
+        if(!isAdded) {
+            this.setState({
+                btnText: 'Added to Cart! Want to remove?',
+                isAdded: true
+            });
+        } else {
+            this.setState({
+                btnText: 'Add to Cart',
+                isAdded: false
+            });
+        }
+        this.props.addToCart(item.productId);
     }
     
     render() {
@@ -45,4 +56,8 @@ class CreateItem extends React.Component {
     }
 }
 
-export default withRouter(CreateItem);
+const mapDispatchToProps = {
+    addToCart,
+};
+
+export default connect(null, mapDispatchToProps)(CreateItem);

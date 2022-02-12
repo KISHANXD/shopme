@@ -16,7 +16,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    products: state.products
+    products: state.posts.products
 });
 
 export default connect(mapStateToProps)(App);

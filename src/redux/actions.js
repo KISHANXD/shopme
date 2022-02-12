@@ -6,6 +6,11 @@ const fetchPostsSuccess = posts => ({
     payload: { posts }
 })
 
+export const addToCart = productId => ({
+    type: 'ADD_PRODUCT_TO_CART',
+    payload: productId
+});
+
 /*asynchronous thunk action creator
   calls the api, then dispatches the synchronous action creator
 */
