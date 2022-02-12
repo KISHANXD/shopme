@@ -1,0 +1,39 @@
+.itemBody {
+    border: 1px solid black;
+    margin: 10px;
+    display: inline-block;
+    width: 18%;
+    padding: 4px;
+}
+.topLeftdata {
+    display: inline-block;
+}
+.topRightData {
+    display: inline-block;
+}
+.itemImage {
+    text-align: center;}
+.image {
+    width: 70%;
+    padding: 10px;
+}
+.itemTitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 8%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.itemDec {
+    margin: 4%;
+}
+.itemCost {
+    margin: 4%;
+}
+.AddToCartBtn {
+    color: white;
+    background-color: rgb(36, 156, 196);
+    border: none;
+    border-radius: 2px;
+    padding: 4px;
+    margin-left: 4%;
+}

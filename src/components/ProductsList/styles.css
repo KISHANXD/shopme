@@ -1,0 +1,17 @@
+.ProductList {
+    text-align: center;
+    margin-top: 8%;
+}
+.cartBtnWrapper {
+    position: sticky;
+    display: block;
+    bottom: 50px;
+    float: right;
+}
+.cartBtn {
+    padding: 10px 30px;
+    border: none;
+    background-color: gray;
+    border-radius: 4px;
+    font-weight: bold;
+}
