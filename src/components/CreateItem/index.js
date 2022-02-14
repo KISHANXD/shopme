@@ -7,8 +7,8 @@ class CreateItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            btnText: 'Add to Cart',
-            isAdded: false,
+            btnText: props.cartItems.includes(props.item.productId) ? 'Added to Cart! Want to remove?' : 'Add to Cart',
+            isAdded: props.cartItems.includes(props.item.productId) ? true : false,
         }
     }
 
@@ -31,9 +31,8 @@ class CreateItem extends React.Component {
     }
     
     render() {
-        const { item } = this.props;
+        const { item, cartItems } = this.props;
         const { btnText } = this.state;
-        console.log(item);
         return (
             <React.Fragment>
                 <div className="itemBody">
@@ -56,8 +55,12 @@ class CreateItem extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => ({
+    cartItems: state.cartItems,
+});
+
 const mapDispatchToProps = {
     addToCart,
 };
 
-export default connect(null, mapDispatchToProps)(CreateItem);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateItem);
